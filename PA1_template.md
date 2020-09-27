@@ -2,7 +2,9 @@
 title: "Activity Monitoring Course Project"
 author: "Henri Kynsilehto"
 date: "9/21/2020"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 
@@ -12,13 +14,6 @@ output: html_document
 As it can be expected that the readership of this document is well informed
 about the purpose and the scope of the document we will pass introductions and
 proceed to the bread and butter of the assignment.
-
-It seems that due to the version changes in R component ecosystem two files are
-not in location mentioned by the submission instructions:
-- R did not produce the intermediate file PA1_template.md even with the option 
-"clean = FALSE". Hence the file is not included here.
-- R stored the figures in to a different directory. The directory "figure" was 
-manually created and figure files were copied there.
 
 ## Prepare, read, and summarize data
 
@@ -56,7 +51,7 @@ str(data)
 ```
 ## 'data.frame':	17568 obs. of  3 variables:
 ##  $ steps   : int  NA NA NA NA NA NA NA NA NA NA ...
-##  $ date    : Date, format: "2012-10-01" "2012-10-01" "2012-10-01" ...
+##  $ date    : Date, format: "2012-10-01" "2012-10-01" ...
 ##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
 ```
 
@@ -73,7 +68,7 @@ names(dailyTotals) <- c("Date", "Steps")
 with(dailyTotals, hist(Steps, breaks = 10, main = "Histogram of steps per day"))
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 ```r
 mean(dailyTotals$Steps)
@@ -110,7 +105,7 @@ names(intervalAverages) <- c("Interval", "Steps")
 with(intervalAverages, plot(Interval, Steps, type = "l", main = "Average steps per interval"))
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
 intervalAverages[which.max(intervalAverages$Steps),]
@@ -141,7 +136,7 @@ names(dailyTotals) <- c("Date", "Steps")
 with(dailyTotals, hist(Steps, breaks = 10, main = "Histogram of steps per day"))
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ```r
 mean(dailyTotals$Steps)
@@ -185,4 +180,4 @@ library(ggplot2)
 ggplot(data = intervalAverages, aes(interval, steps)) + geom_line() + facet_wrap(~ day, dir = 'v')
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->

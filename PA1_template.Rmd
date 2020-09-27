@@ -2,7 +2,9 @@
 title: "Activity Monitoring Course Project"
 author: "Henri Kynsilehto"
 date: "9/21/2020"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -14,13 +16,6 @@ knitr::opts_chunk$set(echo = TRUE)
 As it can be expected that the readership of this document is well informed
 about the purpose and the scope of the document we will pass introductions and
 proceed to the bread and butter of the assignment.
-
-It seems that due to the version changes in R component ecosystem two files are
-not in location mentioned by the submission instructions:
-- R did not produce the intermediate file PA1_template.md even with the option 
-"clean = FALSE". Hence the file is not included here.
-- R stored the figures in to a different directory. The directory "figure" was 
-manually created and figure files were copied there.
 
 ## Prepare, read, and summarize data
 
